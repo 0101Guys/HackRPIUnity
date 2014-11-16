@@ -5,9 +5,9 @@ public class Box : PropertyObject
 {
     public MonoBehaviour fly_movement;
     public TextMesh property1_text;
-    
 
-    public override void AddTag(string tag)
+
+    public override void SetProperty(string tag)
     {
         if (tag == "Fly")
         {
@@ -16,9 +16,9 @@ public class Box : PropertyObject
             property1_text.gameObject.SetActive(true);
         }
     }
-    public override void RemoveTag(string tag)
+    public override void RemoveProperty()
     {
-        if (tag == "Fly")
+        if (property == "Fly")
         {
             fly_movement.enabled = false;
             property1_text.gameObject.SetActive(false);

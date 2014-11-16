@@ -4,23 +4,27 @@ using System.Collections.Generic;
 
 public class PropertyObject : MonoBehaviour 
 {
-    public List<string> tags;
+    public string property;
 
 
-    public virtual void AddTag(string tag)
+    public virtual void SetProperty(string property)
     {
-        tags.Add(tag);
+        this.property = property;
     }
-    public virtual void RemoveTag(string tag)
+    public virtual void RemoveProperty()
     {
-        tags.Remove(tag);
+        this.property = "";
+    }
+    public virtual void GrabObject()
+    {
+        RemoveProperty();
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AddTag("Fly");
+            SetProperty("Fly");
         }
     }
 	
