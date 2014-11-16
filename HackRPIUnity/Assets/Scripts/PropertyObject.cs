@@ -15,5 +15,13 @@ public class PropertyObject : MonoBehaviour
     {
         tags.Remove(tag);
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AddTag("Fly");
+        }
+    }
 	
 }
